@@ -1,8 +1,5 @@
 USE colorado_outdoor_caution;
 
--- =========================
--- DEATH TYPES (10 rows)
--- =========================
 INSERT INTO death_type (type_name, description) VALUES
 ('Predatory Attack', 'Fatal animal encounter'),
 ('Impact Injury', 'Falls or collisions'),
@@ -15,9 +12,6 @@ INSERT INTO death_type (type_name, description) VALUES
 ('Rockfall', 'Falling rocks in mountain areas'),
 ('Lightning Strike', 'Storm-related fatality');
 
--- =========================
--- SEASONS (10 rows)
--- =========================
 INSERT INTO season (season_name, months_covered) VALUES
 ('Spring', 'March-May'),
 ('Summer', 'June-August'),
@@ -30,9 +24,6 @@ INSERT INTO season (season_name, months_covered) VALUES
 ('Early Winter', 'December'),
 ('Late Winter', 'February');
 
--- =========================
--- ACTIVITIES (10 rows)
--- =========================
 INSERT INTO activity (activity_name, risk_level, required_gear) VALUES
 ('Hiking', 'Moderate', 'Boots, water, map'),
 ('Mountain Climbing', 'Extreme', 'Rope, helmet, harness'),
@@ -45,9 +36,6 @@ INSERT INTO activity (activity_name, risk_level, required_gear) VALUES
 ('Snowshoeing', 'Moderate', 'Snowshoes, warm clothing'),
 ('Rock Climbing', 'Extreme', 'Rope, chalk, harness');
 
--- =========================
--- LOCATIONS (already 10 rows - keep yours)
--- =========================
 INSERT INTO location (location_name, region_type, county, wilderness_area, elevation_ft, nearest_trailhead) VALUES
 ('Emerald Lake Trail', 'Alpine Tundra', 'Larimer', 'Rocky Mountain National Park', 10110, 'Bear Lake Trailhead'),
 ('Sky Pond via Glacier Gorge Trail', 'Alpine Tundra', 'Larimer', 'Rocky Mountain National Park', 10900, 'Glacier Gorge Trailhead'),
@@ -60,9 +48,6 @@ INSERT INTO location (location_name, region_type, county, wilderness_area, eleva
 ('Saint Marys Glacier', 'Foothills', 'Clear Creek', 'Arapaho National Forest', 10400, 'Saint Marys Glacier Trailhead'),
 ('Royal Arch Trail', 'Shrublands', 'Boulder', 'Chautauqua Park', 6850, 'Chautauqua Trailhead');
 
--- =========================
--- ENTHUSIASTS (10 rows - yours)
--- =========================
 INSERT INTO enthusiast (first_name, last_name, age, experience_level, state_of_residence) VALUES
 ('Trenton', 'Patterson', 28, 'Intermediate', 'Colorado'),
 ('Kenny', 'Chiv', 22, 'Beginner', 'Colorado'),
@@ -75,9 +60,6 @@ INSERT INTO enthusiast (first_name, last_name, age, experience_level, state_of_r
 ('Daniel', 'Cantu', 41, 'Expert', 'Colorado'),
 ('Dusty', 'Tomlinson', 19, 'Beginner', 'Kansas');
 
--- =========================
--- ENTHUSIAST ACTIVITY (10 rows)
--- =========================
 INSERT INTO enthusiast_activity (enthusiast_id, activity_id, proficiency_level) VALUES
 (1, 1, 'Intermediate'),
 (2, 2, 'Beginner'),
@@ -90,9 +72,6 @@ INSERT INTO enthusiast_activity (enthusiast_id, activity_id, proficiency_level) 
 (9, 9, 'Expert'),
 (10, 10, 'Beginner');
 
--- =========================
--- FATALITY (10 rows)
--- =========================
 INSERT INTO fatality (
 incident_date,
 location_id,
