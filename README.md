@@ -37,6 +37,9 @@ docker run --name final-project-db \
 -p 3306:3306 \
 -d mysql:latest
 
-### 3. start main.py
+```
 
+### 2. start main.py
+```bash
 python3 main.py
+```
