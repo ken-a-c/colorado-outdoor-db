@@ -43,7 +43,7 @@ def create_connection():
         return None
 
 
-# CREATE - add new enthusiast
+# CREATE
 def add_enthusiast(connection):
     try:
         cursor = connection.cursor()
@@ -66,7 +66,7 @@ def add_enthusiast(connection):
         print("error:", e)
 
 
-# READ - show fatalities
+# READ
 def view_fatalities(connection):
     try:
         cursor = connection.cursor()
@@ -91,7 +91,7 @@ def view_fatalities(connection):
         print("error:", e)
 
 
-# UPDATE - change weather
+# UPDATE
 def update_weather(connection):
     try:
         cursor = connection.cursor()
@@ -111,7 +111,7 @@ def update_weather(connection):
         print("error:", e)
 
 
-# DELETE - remove fatality
+# DELETE 
 def delete_fatality(connection):
     try:
         cursor = connection.cursor()
