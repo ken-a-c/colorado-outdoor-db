@@ -43,3 +43,9 @@ docker run --name final-project-db \
 ```bash
 python3 main.py
 ```
+---
+
+## Database Design & ERD
+<img width="1372" height="1062" alt="Untitled Diagram drawio" src="https://github.com/user-attachments/assets/b04618c2-f992-45fb-82e3-eedb2b5c570e" />
+
+---
