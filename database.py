@@ -2,28 +2,6 @@ import mysql.connector
 from mysql.connector import Error
 
 
-def create_connection():
-    """Connect to MySQL database"""
-    try:
-        connection = mysql.connector.connect(
-            host="localhost",
-            database="colorado_outdoor_caution",
-            user="root",
-            password="password"
-        )
-
-        if connection.is_connected():
-            print("Connected to database.")
-            return connection
-
-    except Error as e:
-        print(f"Connection error: {e}")
-        return None
-
-import mysql.connector
-from mysql.connector import Error
-
-
 # connect to database
 def create_connection():
     try:
@@ -43,7 +21,7 @@ def create_connection():
         return None
 
 
-# CREATE
+# CREATE 
 def add_enthusiast(connection):
     try:
         cursor = connection.cursor()
@@ -66,32 +44,57 @@ def add_enthusiast(connection):
         print("error:", e)
 
 
-# READ
+# READ 
 def view_fatalities(connection):
     try:
         cursor = connection.cursor()
 
         sql = """
-        SELECT f.fatality_id, f.incident_date, l.location_name,
-               d.type_name, s.season_name, f.weather_conditions
-        FROM fatality f
-        JOIN location l ON f.location_id = l.location_id
-        JOIN death_type d ON f.death_type_id = d.death_type_id
-        JOIN season s ON f.season_id = s.season_id
+        SELECT
+            fatality.fatality_id,
+            enthusiast.first_name,
+            enthusiast.last_name,
+            fatality.incident_date,
+            location.location_name,
+            death_type.type_name,
+            season.season_name,
+            fatality.weather_conditions
+
+        FROM fatality
+
+        JOIN enthusiast
+        ON fatality.enthusiast_id = enthusiast.enthusiast_id
+
+        JOIN location
+        ON fatality.location_id = location.location_id
+
+        JOIN death_type
+        ON fatality.death_type_id = death_type.death_type_id
+
+        JOIN season
+        ON fatality.season_id = season.season_id
         """
 
         cursor.execute(sql)
+
         rows = cursor.fetchall()
 
-        print("\nfatalities:")
+        print("\n=== Fatality Records ===")
+
         for row in rows:
-            print(row)
+            print("\nFatality ID:", row[0])
+            print("Victim:", row[1], row[2])
+            print("Date:", row[3])
+            print("Location:", row[4])
+            print("Death Type:", row[5])
+            print("Season:", row[6])
+            print("Weather:", row[7])
 
     except Error as e:
         print("error:", e)
 
 
-# UPDATE
+# UPDATE 
 def update_weather(connection):
     try:
         cursor = connection.cursor()
